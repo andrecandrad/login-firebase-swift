@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
         validarCampos()
     }
+    
     @IBAction func cadastrar(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "Cadastrar")
@@ -33,14 +34,34 @@ class LoginViewController: UIViewController {
         present(vc, animated: true)
     }
     
+    
+    @IBAction func esqueciMinhaSenha(_ sender: Any) {
+        Auth.auth().sendPasswordReset(withEmail: email.text!)
+        { [self](erro) in if erro == nil {
+            print("E-mail de recuperacao de senha enviado!")
+            
+            alert(mensagem: "E-mail de recuperacao de senha enviado!")
+            
+        } else {
+            print("Erro! \(String(describing: erro?.localizedDescription))")
+            
+            alert(mensagem: erro!.localizedDescription)
+            
+            
+            
+        }
+            
+        }    }
     func validarCampos() {
         if email.text?.isEmpty == true {
             print("Campo de E-mail vazio!")
+            alert(mensagem: "Campo de E-mail vazio!")
             return
         }
         
         if senha.text?.isEmpty == true {
             print("Campo de senha vazio!")
+            alert(mensagem: "Campo de senha vazio!")
             return
         }
         
@@ -52,6 +73,7 @@ class LoginViewController: UIViewController {
             guard let strongSelf = self else {return}
             if let err = err {
                 print(err.localizedDescription)
+                self?.alert(mensagem: err.localizedDescription)
                 return
             }
             self!.checarUsuario()
@@ -66,5 +88,12 @@ class LoginViewController: UIViewController {
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)        }
     }
+    
+    func alert(mensagem: String) {
+        let alert = UIAlertController(title: "", message: mensagem, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)    }
     
 }

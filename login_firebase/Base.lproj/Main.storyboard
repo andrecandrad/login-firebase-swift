@@ -36,7 +36,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6a-rn-5Ke">
-                                <rect key="frame" x="169" y="413" width="73" height="30"/>
+                                <rect key="frame" x="170" y="468" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Cadastrar"/>
@@ -45,18 +45,25 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrK-dk-b1d">
-                                <rect key="frame" x="141" y="451" width="130" height="30"/>
+                                <rect key="frame" x="142" y="506" width="130" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ja tem uma conta?"/>
                                 <connections>
                                     <action selector="jaTemUmaConta:" destination="jb2-uF-P3Z" eventType="touchUpInside" id="Iv3-d1-x1b"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mGv-aj-74U">
+                                <rect key="frame" x="60" y="413" width="295" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nWQ-M2-uZM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="confirmarSenha" destination="mGv-aj-74U" id="FOA-G9-es4"/>
                         <outlet property="email" destination="a9f-Pb-rd6" id="k4D-Sw-85C"/>
                         <outlet property="senha" destination="jiJ-KI-nFi" id="cOK-XE-J44"/>
                     </connections>
@@ -138,11 +145,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iq4-KO-ll7">
-                                <rect key="frame" x="169" y="456" width="68" height="30"/>
+                                <rect key="frame" x="173" y="456" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cadastrar"/>
                                 <connections>
                                     <action selector="cadastrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fyq-sA-Nrm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cv-gz-RzA">
+                                <rect key="frame" x="131" y="494" width="145" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Esqueci minha senha"/>
+                                <connections>
+                                    <action selector="esqueciMinhaSenha:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rew-AZ-3wy"/>
                                 </connections>
                             </button>
                         </subviews>
